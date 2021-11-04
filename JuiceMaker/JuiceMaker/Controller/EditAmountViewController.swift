@@ -119,13 +119,21 @@ class EditAmountViewController: UIViewController {
         let message = "앱이 5초 뒤 종료됩니다...\n개발자에게 문의해주세요."
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let terminateAction = UIAlertAction(title: "지금 종료", style: .destructive) { _ in
-            exit(-1)
+            self.terminateAppGracefullyAfter(second: 0)
         }
         
         alert.addAction(terminateAction)
         present(alert, animated: true) {
-            sleep(5)
-            exit(-1)
+            self.terminateAppGracefullyAfter(second: 5.0)
+        }
+    }
+    
+    private func terminateAppGracefullyAfter(second: Double) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + second) {
+            UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                exit(-1)
+            }
         }
     }
 }
