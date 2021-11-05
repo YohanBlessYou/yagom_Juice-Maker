@@ -30,7 +30,12 @@
 
 ### 스토리보드 관련
 - Modal + Navigation bar ::: view에 네비 바를 직접 넣거나, 차상위에 네비 컨트롤러를 추가
+
 - Alert 버튼에 화면전환 ::: 스토리보드에 segue를 만들고 `performSegue(identifier)` 호출
+
+- 자동 Font size 변경 ::: `label.adjustsFontSizeToFitWidth`
+
+- 버튼에 padding 주기 ::: title-insets
 
 ---
 
