@@ -10,30 +10,31 @@
 
 ---
 
-## 🔑 키워드
+## 🔑 Project Summary
+### Basic
+- Singleton 구현 ::: `FruitStore.shared`
+- commit 메시지 목록의 가독성 높일 수 없을까? ::: 큰 주제별로 prefix 붙이기
 
-- 네이밍: 메서드 네이밍은 파라미터와 함께 자연스럽게 읽히도록 설계
-- Git/Github (+ Commit Message Convention) - 보류
-- Initialization: 열거형과 for문을 활용한 초기화 `CaseIterable`
-- Nested Type vs 파일 분리
-- Singleton: FruitStore 타입의 과일 재고를 private(set) 접근제어 부여한 `싱글톤`으로 만들어서 화면 간 데이터 공유
-- UIViewController Life Cycle: (+ 화면 간 정보 전달)
-- Navigation Controller: 2개의 네비게이션 컨트롤러를 Modal segue 로 연결
-- Modal: Alert 사용법 + Action Sheet 와 용도 비교
-- IBOutlet, IBAction (+ Access Control, weak)
-- IBOutlet 에 private 접근제어를 붙여도 만들 수 있는 이유, 스토리보드에서 뷰컨의 이니셜라이저를 통해 생성하기 때문에, 메서드를 통해서 만들기 때문에 private 접근제어가 있더라도, 세팅을 해줄 수 있다. weak 는 고사리네꺼 참고
-- StoryBoard (segue) -> 스토리보드를 이용해 전반적인 앱 구조와 UI 설계, segue 의 identifier 지정하고 performSegue 통해서 화면 전환 구현 - 보류
-- Haptic Feedback
-- Notification Center
-- Auto Layout (+ Dynamic Type, Title Insets)
-- App termination
-- #selector() 안에 들어가는 파라미터는 에러를 던지면 안 된다
-- sleep()
-- class vs struct
+### Foundation 관련
+- Alert 구현 ::: 동작 성공 여부를 Alert로 알림
+
+- NotificationCenter 구현 ::: 특정 Modal의 dismiss를 다른 뷰컨들에게 알리기 위함
+
+- App 종료 구현 ::: `exit()` (Linux Standard Exit status code)
+
+- 코드 예약하기 구현(타이머와 유사) ::: `DispatchQueue.main.asyncAfter(deadline: )`
+
+- Device 홈 화면으로 이동 구현 ::: `UIApplication.shared.perform(#selector(NSXPCConnection.suspend))`
+
+- `sleep()`은 타이머가 아니다 ::: 컴퓨팅 자원을 독점하여 sleep동안 어떠한 interaction도 불가
+
+### 스토리보드 관련
+- Modal + Navigation bar ::: view에 네비 바를 직접 넣거나, 차상위에 네비 컨트롤러를 추가
+- Alert 버튼에 화면전환 ::: 스토리보드에 segue를 만들고 `performSegue(identifier)` 호출
 
 ---
 
-## 🤔 고민한 부분
+## 🤔 키워드 Detail
 <br>
 
 ### 타입 설계
