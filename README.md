@@ -13,7 +13,10 @@
 ## 🔑 Project Summary
 ### Basic
 - Singleton 구현 ::: `FruitStore.shared`
+
 - commit 메시지 목록의 가독성 높일 수 없을까? ::: 큰 주제별로 prefix 붙이기
+
+- `#selector()`에 들어갈 메서드는 에러를 외부로 던지면(`throws`) 안된다
 
 ### Foundation 관련
 - Alert 구현 ::: 동작 성공 여부를 Alert로 알림
@@ -28,7 +31,9 @@
 
 - `sleep()`은 타이머가 아니다 ::: 컴퓨팅 자원을 독점하여 sleep동안 어떠한 interaction도 불가
 
-### 스토리보드 관련
+- 유저가 화면을 볼 수 있는 시점은 `viewWillAppear`와 `viewDidAppear` 사이다
+
+### UI/UX 관련
 - Modal + Navigation bar ::: view에 네비 바를 직접 넣거나, 차상위에 네비 컨트롤러를 추가
 
 - Alert 버튼에 화면전환 ::: 스토리보드에 segue를 만들고 `performSegue(identifier)` 호출
@@ -36,6 +41,12 @@
 - 자동 Font size 변경 ::: `label.adjustsFontSizeToFitWidth`
 
 - 버튼에 padding 주기 ::: title-insets
+
+- Alert와 Action sheet 용도 차이 ::: [H.I.G](https://developer.apple.com/design/human-interface-guidelines/ios/views/alerts/) 참고 / 버튼이 3개 이상이면 Action sheet 고려
+
+- Stepper는 +/- 버튼을 구분하지 못한다 ::: value change로만 가능. 따라서 'value 초기화' 필요
+
+- 진동 구현 ::: `UIFeedbackGenerator`. 진동 패턴에 따라 3종류가 있다. H.I.G참고
 
 ---
 
