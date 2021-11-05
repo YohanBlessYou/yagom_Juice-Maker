@@ -2,7 +2,7 @@
 
 - Project: 쥬스메이커
 
-- Date: [3주] 2021-10-18 ~ (진행 중)
+- Date: [3주] 2021-10-18 ~ 2021-11-05
 
 - Contributors: 요한(@YohanBlessYou, 예거(@Jager-yoo)
 
@@ -10,21 +10,28 @@
 
 ---
 
-
 ## 🔑 키워드
 
-- API Design Guidelines - Naming
-
-- Initialization
-- Access Control
-- Nested Types
-- Error Handling
-- Optional Binding
-- Control Flow
-- Protocol (CaseIterable)
+- 네이밍: 메서드 네이밍은 파라미터와 함께 자연스럽게 읽히도록 설계
+- Git/Github (+ Commit Message Convention) - 보류
+- Initialization: 열거형과 for문을 활용한 초기화 `CaseIterable`
+- Nested Type vs 파일 분리
+- Singleton: FruitStore 타입의 과일 재고를 private(set) 접근제어 부여한 `싱글톤`으로 만들어서 화면 간 데이터 공유
+- UIViewController Life Cycle: (+ 화면 간 정보 전달)
+- Navigation Controller: 2개의 네비게이션 컨트롤러를 Modal segue 로 연결
+- Modal: Alert 사용법 + Action Sheet 와 용도 비교
+- IBOutlet, IBAction (+ Access Control, weak)
+- IBOutlet 에 private 접근제어를 붙여도 만들 수 있는 이유, 스토리보드에서 뷰컨의 이니셜라이저를 통해 생성하기 때문에, 메서드를 통해서 만들기 때문에 private 접근제어가 있더라도, 세팅을 해줄 수 있다. weak 는 고사리네꺼 참고
+- StoryBoard (segue) -> 스토리보드를 이용해 전반적인 앱 구조와 UI 설계, segue 의 identifier 지정하고 performSegue 통해서 화면 전환 구현 - 보류
+- Haptic Feedback
+- Notification Center
+- Auto Layout (+ Dynamic Type, Title Insets)
+- App termination
+- #selector() 안에 들어가는 파라미터는 에러를 던지면 안 된다
+- sleep()
+- class vs struct
 
 ---
-
 
 ## 🤔 고민한 부분
 <br>
@@ -80,7 +87,7 @@ juiceMaker.make(.bananaJuice)
 
 <br>
 
-### 파일 분리 vs Nested Type
+### Nested Type vs 파일 분리
 
 
 - 열거형을 외부 파일로 분리할 것인가, 또는 타입 안에 Nested Type 으로 넣을 것인가를 고민했습니다.
@@ -107,3 +114,5 @@ juiceMaker.make(.bananaJuice)
         }
     }
     ```
+    
+<br>
