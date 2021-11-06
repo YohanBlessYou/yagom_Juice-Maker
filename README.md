@@ -51,6 +51,11 @@
 
 ---
 
+## UML
+![image](https://user-images.githubusercontent.com/39155090/140614274-64ff2701-3288-44a2-bbdb-4603d60db4cf.png)
+
+![image](https://user-images.githubusercontent.com/39155090/140614912-16c59b50-90d3-4ef7-89f2-f2099c054b4d.png)
+
 ## 🤔 키워드 Detail
 <br>
 
